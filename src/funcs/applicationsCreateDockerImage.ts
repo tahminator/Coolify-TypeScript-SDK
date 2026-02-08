@@ -159,7 +159,7 @@ export async function applicationsCreateDockerImage(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.nil(200, z.void()),
+    M.nil(201, z.void()),
     M.jsonErr(
       [400, 413, 414, 415, 422, 431, 510],
       errors.BadRequest$inboundSchema,

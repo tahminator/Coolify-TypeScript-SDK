@@ -54,10 +54,10 @@ export const ApplicationDeploymentQueue$inboundSchema: z.ZodType<
   is_api: z.boolean().optional(),
   created_at: z.string().optional(),
   updated_at: z.string().optional(),
-  logs: z.string().optional(),
-  current_process_id: z.string().optional(),
+  logs: z.string().nullish(),
+  current_process_id: z.string().nullish(),
   restart_only: z.boolean().optional(),
-  git_type: z.string().optional(),
+  git_type: z.string().nullish(),
   server_id: z.number().int().optional(),
   application_name: z.string().optional(),
   server_name: z.string().optional(),
@@ -65,7 +65,7 @@ export const ApplicationDeploymentQueue$inboundSchema: z.ZodType<
   destination_id: z.string().optional(),
   only_this_server: z.boolean().optional(),
   rollback: z.boolean().optional(),
-  commit_message: z.string().optional(),
+  commit_message: z.string().nullish(),
 }).transform((v) => {
   return remap$(v, {
     "application_id": "applicationId",

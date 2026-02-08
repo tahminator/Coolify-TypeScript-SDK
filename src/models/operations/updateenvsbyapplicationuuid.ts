@@ -280,9 +280,7 @@ export const UpdateEnvsByApplicationUuidResponseBody$inboundSchema: z.ZodType<
   UpdateEnvsByApplicationUuidResponseBody,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  message: z.string().optional(),
-});
+> = z.unknown();
 
 /** @internal */
 export type UpdateEnvsByApplicationUuidResponseBody$Outbound = {
